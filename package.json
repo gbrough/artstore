@@ -3,9 +3,9 @@
   "description": "",
   "version": "0.0.0",
   "private": true,
-  "author": "Brian Frichette",
+  "author": "",
   "homepage": "",
-  "contributors": [ "Brian Frichette <brian.frichette@gmail.com> (https://github.com/brian-frichette)" ],
+  "contributors": [ "" ],
   "bugs": { "url": "" },
   "scripts": { "start": "nodemon app.js" },
   "dependencies": {
