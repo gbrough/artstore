@@ -90,4 +90,9 @@ img.medium {
   margin-bottom: 0.5rem;
 }
 .price {
-  
+  font-size: 2rem;
+}
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
