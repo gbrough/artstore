@@ -4,7 +4,7 @@ const data = {
       _id: "1",
       name: "Painting of Laura",
       category: "Painting",
-      image: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/242634160_947304952820_7962513054093333428_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=ho0cunb177oAX85mpNg&_nc_ht=scontent-sea1-1.xx&oh=969445c3d0ae29da1e3394a1ec8d14d7&oe=617B3A32",
+      image: '/images/Laura.png',
       price: "100",
       brand: "Garrett's Artwork",
       rating: "4.4",
