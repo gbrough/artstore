@@ -6,11 +6,3 @@
 
 
 
-Issues:
-When deploying on Heroku or running npm install, getting problem with express package version
-
-Removed express line inside package.json
-    "dotenv": "^10.0.0",
-    "express": "^6.14.15",
-    "express-async-handler": "^1.1.4",
-
