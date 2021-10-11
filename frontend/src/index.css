@@ -123,6 +123,7 @@ img {
   border-radius: 0.5rem;
 }
 img.medium {
+  max-height: 29rem;
   max-width: 29rem;
   width: 100%;
 }

@@ -26,9 +26,9 @@ const data = {
     },
     {
       _id: "3",
-      name: "Drawing of Rachel McAdams",
+      name: "Painting of Riley",
       category: "Painting",
-      image: "/images/RachelMcAdams.png",
+      image: "/images/Riley.jpeg",
       price: "90",
       countInStock: 0,
       brand: "Garrett's Artwork",
