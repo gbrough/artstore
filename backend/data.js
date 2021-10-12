@@ -17,7 +17,6 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
       name: "Painting of Laura",
       category: "Painting",
       image: '/images/Laura.png',
@@ -29,7 +28,6 @@ const data = {
       description: '1st iteration of painting',
     },
     {
-      _id: "2",
       name: "Painting of Claire",
       category: "Painting",
       image: "/images/Claire.png",
@@ -41,7 +39,6 @@ const data = {
       description: '1st iteration of drawing of Rachel',
     },
     {
-      _id: "3",
       name: "Painting of Riley",
       category: "Painting",
       image: "/images/Riley.jpeg",
@@ -53,7 +50,6 @@ const data = {
       description: '1st iteration of painting',
     },
     {
-      _id: "4",
       name: "Woman Portrait #1",
       category: "Painting",
       image: "/images/womanportrait1.png",
@@ -65,7 +61,6 @@ const data = {
       description: '1st iteration of painting',
     },
     {
-      _id: "5",
       name: "Woman Portrait #2",
       category: "Painting",
       image: "/images/womanportrait2.png",
@@ -77,7 +72,6 @@ const data = {
       description: '1st iteration of painting',
     },
     {
-      _id: "6",
       name: "Woman Portrait #3",
       category: "Painting",
       image: "/images/womanportrait3.png",
