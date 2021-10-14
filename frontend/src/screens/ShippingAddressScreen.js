@@ -1,14 +1,28 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { saveShippingAddress } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
-export default function ShippingAddressScreen() {
-  const [fullName, setFullName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
+export default function ShippingAddressScreen(props) {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin; 
+  const cart = useSelector((state) => state.cart);
+  const {shippingAddress} = cart;
+  if(!userInfo) {
+    props.history.push("/signin");
+  }
+  const [fullName, setFullName] = useState(shippingAddress.fullName);
+  const [address, setAddress] = useState(shippingAddress.address);
+  const [city, setCity] = useState(shippingAddress.city);
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  const [country, setCountry] = useState(shippingAddress.country);
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(
+      saveShippingAddress({ fullName, address, city, postalCode, country })
+    );
+    props.history.push('/payment');
   };
   return (
     <div>
@@ -36,17 +50,6 @@ export default function ShippingAddressScreen() {
             placeholder="Enter Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="fullName">Full Name</label>
-          <input
-            type="text"
-            id="fullName"
-            placeholder="Enter Full Name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
             required
           ></input>
         </div>
