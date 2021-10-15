@@ -3,13 +3,14 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
+import orderRouter from "./routers/orderRouter.js";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use('/api/orders', orderRouter);
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/artstore", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
