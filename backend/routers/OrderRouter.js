@@ -1,7 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import Order from '../models/OrderModel.js';
-import { isAuth } from '../utils.js'
+import Order from '../models/orderModel.js';
+import { isAuth } from '../utils.js';
 
 const orderRouter = express.Router();
 
@@ -9,9 +9,8 @@ orderRouter.post(
 '/',
 isAuth,
 expressAsyncHandler(async (req, res) => {
-  if(req.body.order.Items.length == 0) {
-    res.status(400).send({
-      message: 'Cart is empty'});
+  if (req.body.orderItems.length === 0) {
+    res.status(400).send({ message: 'Cart is empty' });
     } else {
       const order = new Order({
         orderItems: req.body.orderItems,
@@ -21,13 +20,14 @@ expressAsyncHandler(async (req, res) => {
         shippingPrice: req.body.shippingPrice,
         taxPrice: req.body.taxPrice,
         totalPrice: req.body.totalPrice,
-        user: req.user._id
+        user: req.user._id,
         });
         const createdOrder = await order.save();
         res
           .status(201)
-          .send({message: 'Order placed successfully', order: createdOrder });
+          .send({ message: 'New Order Created', order: createdOrder });
       } 
   })
   );
+  
   export default orderRouter;
