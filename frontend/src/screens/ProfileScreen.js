@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { detailsUser, updateUserProfile } from "../actions/userActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
 
 export default function ProfileScreen() {
   const [name, setName] = useState("");
@@ -22,15 +23,16 @@ export default function ProfileScreen() {
     loading: loadingUpdate,
   } = userUpdateProfile;
   const dispatch = useDispatch();
-  useEffect(() => {
+  useEffect(() => { 
     if (!user) {
+      dispatch({type: USER_UPDATE_PROFILE_RESET})
       dispatch(detailsUser(userInfo._id));
     } else {
       setName(user.name);
       setEmail(user.email);
     }
-    dispatch(detailsUser(userInfo._id));
-  }, [dispatch, userInfo._id, user]);
+  }, [dispatch, userInfo._id, user]
+  );
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
